@@ -1,30 +1,27 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 class Video
 {
-
-    public string Name { get; set; }
-    public string Title { get; set; }
-    public int Length { get; set; }
-
+    private string _name;
+    private string _title;
+    private int _length;
     private List<Comment> _comments;
 
     public Video(string name, string title = "", int length = 0)
     {
-        Name = name;
-        Title = title;
-        Length = length;
+        _name = name;
+        _title = title;
+        _length = length;
         _comments = new List<Comment>();
     }
 
     public void DisplayVideoInformation()
     {
-        Console.WriteLine($"Poster: {Name}");
-        Console.WriteLine($"Title: {Title}");
-        Console.WriteLine($"Length: {Length}");
+        Console.WriteLine($"Poster: {_name}");
+        Console.WriteLine($"Title: {_title}");
+        Console.WriteLine($"Length: {_length}");
         Console.WriteLine($"Comments: {_comments.Count}");
-
         ReadComments();
     }
 
